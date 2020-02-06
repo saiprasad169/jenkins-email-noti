@@ -1,5 +1,15 @@
-node {
+node ('kube-m'){
      def app
-     stage('test app') {
-    // some block
-}
+     stage('Deploy on kubernetes') {
+         sh "kubectl apply -f kube-dev.yml"
+         sh "bash ./image-update.sh"
+         }
+
+     stage('Verify running pod & service') {
+         sh 'sleep 25'
+         sh "kubectl -n develop get pods -l app=dev-mlg-ui"
+         sh "kubectl -n develop get svc dev-mlg-ui"
+         echo "Application deployed Successfully!!"
+
+ }
+ }
