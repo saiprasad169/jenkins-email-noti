@@ -1,1 +1,5 @@
-step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'saiprasad169@gmail.com', sendToIndividuals: true])
+node {
+     def app
+     stage('test app') {
+    // some block
+}
