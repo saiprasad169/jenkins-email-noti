@@ -7,8 +7,8 @@ node ('kube-m'){
 
      stage('Verify running pod & service') {
          sh 'sleep 25'
-         sh "kubectl -n develop get pods -l app=dev-mlg-ui"
-         sh "kubectl -n develop get svc dev-mlg-ui"
+         sh "kubectl -n develop get pods -l app=devui"
+         sh "kubectl -n develop get svc devui"
          echo "Application deployed Successfully!!"
 
  }
