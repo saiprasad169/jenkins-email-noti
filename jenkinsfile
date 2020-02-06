@@ -1,14 +1,6 @@
 node {
      def app
-     stage('Deploy on kubernetes') {
-         sh "kubectl apply -f kube-dev.yml"
-         sh "bash ./image-update.sh"
+     stage('Deploy') {
+         sh test.sh
          }
-
-     stage('Verify running pod & service') {
-         sh 'sleep 25'
-         sh "kubectl -n develop get pods -l app=devui"
-         echo "Application deployed Successfully!!"
-
- }
  }
