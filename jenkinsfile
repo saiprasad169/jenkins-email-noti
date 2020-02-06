@@ -1,8 +1,8 @@
 node {
-     def app
-     stage('Deploy') {
-         sh test.sh
+    def app
+    stage('Deploy') {
+        sh test.sh
          }
-     stage('email') {
-     step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: '', sendToIndividuals: false])
+    stage('email') {
+    step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: '', sendToIndividuals: false])
  }
