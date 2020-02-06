@@ -1,1 +1,5 @@
-mail bcc: '', body: 'SUCCESS ', cc: 'saiprasad.info1@gmail.com', from: '', replyTo: '', subject: 'BUILD', to: 'saiprasad169@gmail.com'
+node {
+     def app 
+	 stage('Email Notification'){
+	    mail bcc: '', body: 'JENKINS FAILED', cc: '', from: '', replyTo: '', subject: 'Failure', to: 'saiprasad169@gmail.com' 
+       }
