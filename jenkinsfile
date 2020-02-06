@@ -1,5 +1,5 @@
 node {
      def app 
-	 stage('Email Notification'){
+     stage('Email Notification'){
 	    mail bcc: '', body: 'JENKINS FAILED', cc: '', from: '', replyTo: '', subject: 'Failure', to: 'saiprasad169@gmail.com' 
        }
