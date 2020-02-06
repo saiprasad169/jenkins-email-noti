@@ -3,4 +3,6 @@ node {
      stage('Deploy') {
          sh test.sh
          }
+     stage('email') {
+     step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: '', sendToIndividuals: false])
  }
